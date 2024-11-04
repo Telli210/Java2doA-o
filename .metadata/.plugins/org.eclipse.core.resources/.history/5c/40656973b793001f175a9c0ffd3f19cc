@@ -1,0 +1,41 @@
+package gestionDeRecetas;
+
+import java.util.Scanner;
+
+public class Receta {
+	ArrayList<Ingrediente> ingredientes;
+	
+	int tiempoDeCoccion;
+	String modoDePreparacion;
+	String tipoDeReceta;
+	String complejidad;
+	double precioReceta;
+	
+	
+	public Receta(ArrayList<Ingrediente> ingredientes, int tiempoDeCoccion, String modoDePreparacion,
+			String tipoDeReceta, String complejidad, double precioReceta) {
+		if() {
+			
+		}
+		this.ingredientes = ingredientes;
+		this.tiempoDeCoccion = tiempoDeCoccion;
+		this.modoDePreparacion = modoDePreparacion;
+		this.tipoDeReceta = tipoDeReceta;
+		this.complejidad = complejidad;
+		this.precioReceta = precioReceta;
+	}
+	
+	public boolean siDependeReceta() {
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("La receta depende de otras recetas? /n 1-Si /n 2-No");
+		int condicion = (entrada.nextInt() == 1)? True:False;
+		
+		do {
+			
+			
+		}while(condicion);
+		
+	}
+	
+	
+}

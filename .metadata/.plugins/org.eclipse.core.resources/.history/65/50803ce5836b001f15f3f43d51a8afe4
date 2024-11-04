@@ -1,0 +1,83 @@
+package punto1;
+
+import java.util.Scanner;
+
+public class Vehiculo {
+	private	String marca;
+	private	String modelo;
+	private	String tipoMotor;
+	
+	public Vehiculo() {
+		this.marca = "Desconocida";
+		this.modelo = "Sin modelo";
+		this.tipoMotor = "Desconocido";
+		
+	}
+
+	public Vehiculo(String marca, String modelo, String tipoMotor) {
+		
+		this.marca = marca;
+		this.modelo = modelo;
+		this.tipoMotor = tipoMotor;
+		
+	}
+
+	public String toString() {
+		return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", tipoMotor=" + tipoMotor + "]";
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getTipoMotor() {
+		return tipoMotor;
+	}
+
+	public void setTipoMotor(String tipoMotor) {
+		this.tipoMotor = tipoMotor;
+	}
+	
+	//Metodos
+	
+	public void inicializarObjeto() {
+		Scanner entrada = new Scanner(System.in);
+		
+		
+		System.out.println("Ingrese la marca");
+		marca = entrada.nextLine();
+		System.out.println("Ingrese el modelo");
+		modelo = entrada.nextLine();
+		System.out.println("Ingrese el tipo de motor (diesel/naftero)");
+		tipoMotor = entrada.nextLine();
+	}
+	
+	
+	public int cantidadTipoNafta(String tipo) {
+		int cantidadTipoNafta = 0;
+		if(tipo.equals("Nafta"))cantidadTipoNafta ++;
+		
+		return cantidadTipoNafta;
+	}
+	
+	public int cantidadTipoDiesel(String tipo) {
+		int cantidadTipoDiesel = 0;
+		if(tipo.equals("Diesel"))cantidadTipoDiesel ++;
+		
+		return cantidadTipoDiesel;
+	}
+	
+	
+}

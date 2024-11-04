@@ -1,0 +1,87 @@
+package gestionDeRecetas;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Receta {
+	
+	String nombre;
+	ArrayList<Ingrediente> ingredientes;
+	ArrayList<Receta> recetasContenidas;
+	int tiempoDeCoccion;
+	String modoDePreparacion;
+	String tipoDeReceta;
+	String complejidad;
+	double precioReceta;
+	
+	
+	public Receta(ArrayList<Ingrediente> ingredientes, int tiempoDeCoccion, String modoDePreparacion,
+			String tipoDeReceta, String complejidad, double precioReceta) {
+		
+		this.recetasContenidas = siDependeReceta();
+		this.ingredientes = ingredientes;
+		this.tiempoDeCoccion = tiempoDeCoccion;
+		this.modoDePreparacion = modoDePreparacion;
+		this.tipoDeReceta = tipoDeReceta;
+		this.complejidad = complejidad;
+		this.precioReceta = precioReceta;
+	}
+	
+	//Va agregando las recetas en caso de que esta receta dependa de otras
+	public ArrayList<Receta> siDependeReceta() {
+		Scanner entrada = new Scanner(System.in);
+		
+		boolean condicion = (Helper.validarEnteroEnRango(entrada, "La receta depende de otras recetas? \n 1-Si \n 2-No", 1, 2) != 1);
+		
+		while(condicion) {
+			//Muestra las recetas para poder elegir
+			mostrarRecetasPorNombre();
+			
+			String nombreReceta = Helper.validarStringNoVacio(entrada, "Que receta desea agregar a esta receta?").toLowerCase();
+			if(buscarRecetaPorNombre(nombreReceta)) {
+				
+			}else {
+				System.out.println("La receta ingresada no esta en la lista, por favor ingrese el nombre de una receta valida");
+			}
+			
+			
+		}
+		
+	}
+	
+	public Receta buscarRecetaPorNombreV1(String nombreReceta) {
+		
+		boolean aux = false;
+		for(Receta receta:recetasContenidas) {
+			
+			if(receta.nombre.equalsIgnoreCase(nombreReceta)) {
+				return receta;
+				aux = true;
+			}
+		}
+		return null;
+	}
+	
+	
+	
+	//Metodo para buscar una receta por su nombre y verificar que si este
+	public boolean buscarRecetaPorNombre(String nombreReceta) {
+		
+		
+		for(Receta receta:recetasContenidas) {
+			
+			if(receta.nombre.equalsIgnoreCase(nombreReceta)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void mostrarRecetasPorNombre(){
+		for(Receta receta:recetasContenidas) {
+			System.out.println(receta.nombre);
+		}
+	}
+	
+	
+}

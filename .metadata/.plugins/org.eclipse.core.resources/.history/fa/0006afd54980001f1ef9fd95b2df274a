@@ -1,0 +1,71 @@
+package punto3;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		Queue <trabajoImpresion> colaDocumentos = new Queue<trabajoImpresion>();
+		Queue <trabajoImpresion> colaDocumentosAuxiliar = new Queue<trabajoImpresion>(30);
+		trabajoImpresion nuevoDocumento = new trabajoImpresion();
+		int opcion;
+		
+		do{
+			opcion = menu(entrada);
+			switch(opcion) {
+			case 1:
+				nuevoDocumento = cargarDocumento(entrada);
+				colaDocumentos.add(nuevoDocumento);
+				break;
+			case 2:
+				colaDocumentos.remove();
+				break;
+			case 3:
+				colaDocumentosAuxiliar = imprimeDocumento(colaDocumentos);
+				colaDocumentosAuxiliar.add(colaDocumentos.remove());
+				break;
+			}
+		}while(!colaDocumentos.isEmpty());
+		mostrarCantTrabajosMayor(entrada, colaDocumentosAuxiliar);
+		entrada.close();//Siempre cerrar el scanner
+
+	}
+	
+	private static int menu(Scanner entrada) {
+		int opcion;
+		System.out.println("Elija una opcion");
+		System.out.println("1-Agregar un elemento de la cola de documentos");
+		System.out.println("2-Quitar un elemento de la cola de documentos");
+		System.out.println("3-Continuar(Se imprimira el siguiente elemento en la cola)");
+		opcion = entrada.nextInt();
+		entrada.nextLine();//Limpia el buffer
+		return opcion;
+	}
+	
+	private static trabajoImpresion cargarDocumento(Scanner entrada) {
+		int codTrabajo = Helper.validarEntero(entrada, "Ingrese el codigo del trabajo");
+		String nomTrabajo = Helper.validarStringNoVacio(entrada, "Ingrese el nombre del trabajo");
+		int cantPagTrabajo = Helper.validarEnteroNoNegativo(entrada, "Ingrese la cantidad de paginas del trabajo");
+		trabajoImpresion documentoAuxiliar = new trabajoImpresion(codTrabajo, nomTrabajo, cantPagTrabajo); 
+		return documentoAuxiliar;
+	}
+	
+	private static void mostrarCantTrabajosMayor(Scanner entrada, Queue<trabajoImpresion> colaAuxiliar) {
+		int contTrabajosMayor = 0;
+		System.out.println("Se mostrara la cantidad de trabajos, cuya cantidad de páginas sea mayor o igual a un valor ingresado");
+		int valor = Helper.validarEnteroNoNegativo(entrada, "Ingrese el valor: ");
+		while(!colaAuxiliar.isEmpty()) {
+			if(colaAuxiliar.remove().getCantPagTrabajo() >= valor){
+				contTrabajosMayor ++;
+			}
+		}
+		System.out.println("La cantidad de trabajos impresos con una cantidad de paginas mayor o igual al valor ingresado es: "+ contTrabajosMayor);
+	}
+	
+	private static Queue<trabajoImpresion> imprimeDocumento(Queue<trabajoImpresion> colaAuxiliar){
+		
+		return colaAuxiliar;
+	}
+
+}

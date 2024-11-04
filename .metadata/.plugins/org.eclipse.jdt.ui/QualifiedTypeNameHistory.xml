@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="Datos.AccesoDatos"/>
+    <fullyQualifiedTypeName name="LogicaNegocio.Stock"/>
+    <fullyQualifiedTypeName name="punto3.Helper"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="punto1.Helper"/>
+    <fullyQualifiedTypeName name="punto2.Helper"/>
+    <fullyQualifiedTypeName name="gestionDeRecetas.Helper"/>
+</qualifiedTypeNameHistroy>

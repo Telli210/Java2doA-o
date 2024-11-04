@@ -1,0 +1,8 @@
+1727469298354	Rename type 'BaseDatos'
+1727469660770	Rename package 'AccesoDatos'
+1727550944813	Rename type 'LogicaDeNegocio'
+1727623009508	Rename local variable 'scanner'
+1727623467090	Rename local variable 'stock'
+1727623506828	Rename type 'Stock'
+1727623575013	Rename local variable 'lotes'
+1727654244274	Rename local variable 'stockRecuperado'

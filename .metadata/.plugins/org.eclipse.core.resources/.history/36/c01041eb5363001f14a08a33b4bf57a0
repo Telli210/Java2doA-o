@@ -1,0 +1,20 @@
+package punto3;
+import java.util.Scanner;
+public class punto3 {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in); 
+		 
+		do {
+			System.out.println("a)Consultar el saldo");
+			System.out.println("b)Depositar dinero");
+			System.out.println("c)Retirar dinero");
+			System.out.println("d)Salir");
+			String opcion = entrada.next();
+			
+			
+		}while(opcion = "d");
+
+	}
+
+}

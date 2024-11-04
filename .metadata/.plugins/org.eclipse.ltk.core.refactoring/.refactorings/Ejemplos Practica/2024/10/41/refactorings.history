@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Helper.java&apos; to &apos;EstructuraDeDatosTP2/src/punto2&apos;&#x0D;&#x0A;- Original project: &apos;Ejemplos Practica&apos;&#x0D;&#x0A;- Destination element: &apos;EstructuraDeDatosTP2/src/punto2&apos;&#x0D;&#x0A;- Original element: &apos;estructuraDeDatos.Helper.java&apos;" description="Copy compilation unit" destination="=EstructuraDeDatosTP2/src&lt;punto2" element1="/src&lt;estructuraDeDatos{Helper.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1728861817717" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,51 @@
+package punto3;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class Evento {
+	private String nombre;
+	private String descripcion;
+	private LocalDate fechaInicio;
+	private LocalDate fechaFin;
+	
+	//a)
+	public Evento() {
+		this.nombre = "Sin nombre";
+		this.descripcion = "Sin descripcion";
+		this.fechaInicio = LocalDate.now();
+		this.fechaFin = LocalDate.now().plusDays(7);//plusDays es un metodo que pertenece a la clase LocalDate que suma dias al dato tipo LocalDate
+	}
+
+	//b)
+	public Evento(String nombre, String descripcion, LocalDate fechaInicio, LocalDate fechaFin) {
+		
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+	}
+	
+	//Metodos
+	
+	//c)
+	public void validarFechas() {
+		if(fechaInicio.isBefore(fechaFin)) {
+			fechaInicio = LocalDate.now();
+			fechaFin = LocalDate.now().plusDays(7);
+		}
+	}
+	//d)
+	@Override
+	public String toString() {
+		return "Evento [Nombre:" + nombre + ", Descripcion:" + descripcion + ", Fecha de Inicio:" + fechaInicio
+				+ ", Fecha de fin:" + fechaFin + "]";
+	}
+	
+	//e)
+	public void duracionEvento() {
+		System.out.println("La duracion del evento es de : "+ChronoUnit.DAYS.between(fechaInicio, fechaFin)+" dias");
+	}
+	
+	
+}
